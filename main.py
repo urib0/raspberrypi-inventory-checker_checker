@@ -54,12 +54,12 @@ while(True):
         item_url = row.find(class_="column-5").find("a").get("href")
         if item_name in items:
             if stock_status == "〇在庫あり" and shop_name != "Amazon":
-                msg = msg + f"{item_name}, {shop_name}, {stock_status}, {item_url}\n"
+                msg = msg + f"\n[{shop_name}] {item_name}\n{stock_status}\n{item_url}"
     print(msg)
     # メッセージ送信
-#    if len(msg) != 0:
-#        ret = send_line_message(conf["line_token"],msg)
-#        print(f"line notifier response:{ret}")
+    if len(msg) != 0:
+        ret = send_line_message(conf["line_token"],msg)
+        print(f"line notifier response:{ret}")
 #        ret = send_slack_message(conf["slack_token"],conf["slack_channel"],msg)
 #        print(f"slack notifier response:{ret}")
 
