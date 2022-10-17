@@ -60,8 +60,8 @@ while(True):
     if len(msg) != 0:
         ret = send_line_message(conf["line_token"],msg)
         print(f"line notifier response:{ret}")
-#        ret = send_slack_message(conf["slack_token"],conf["slack_channel"],msg)
-#        print(f"slack notifier response:{ret}")
+        ret = send_slack_message(conf["slack_token"],conf["slack_channel"],msg)
+        print(f"slack notifier response:{ret}")
 
     time.sleep(conf["interval"])
 
