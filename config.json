@@ -1,0 +1,6 @@
+{
+    "interval": 180,
+    "line_token": "hoge",
+    "slack_token": "hoge",
+    "slack_channel": "hoge"
+}
