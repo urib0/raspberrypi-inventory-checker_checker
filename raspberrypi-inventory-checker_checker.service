@@ -1,0 +1,13 @@
+[Unit]
+Description=rpi inventory notification service
+After=network.target auditd.service
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/work/raspberrypi-inventory-checker_checker
+ExecStart=/home/pi/.pyenv/shims/python3 /home/pi/work/raspberrypi-inventory-checker_checker/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
